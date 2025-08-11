@@ -1,1 +1,0 @@
-pnpm add -D eslint-plugin-react-hooks
