@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Erica_One } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -74,9 +73,9 @@ function SignUpForm() {
         },
         onError: (error) => {
           if (error.error.code === "USER_ALREADY_EXISTS") {
-            toast.error("E-mail ou senha inválidos");
-            form.setError("email", {
-              message: "E-mail já cadastrado",
+            toast.error("E-mail já cadastrado.");
+            return form.setError("email", {
+              message: "E-mail já cadastrado.",
             });
           }
           toast.error(error.error.message);
